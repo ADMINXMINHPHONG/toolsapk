@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Thông tin Thanh toán Đa năng - Tối Ưu</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* CSS Reset nhẹ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Biến CSS */
+        :root {
+            /* Nền thơ mộng: Gradient nhẹ từ tím nhạt sang xanh nhạt */
+            --bg-start: #f8f0ff; 
+            --bg-end: #f0f8ff; 
+            
+            --card-bg: #ffffff;
+            --text-color: #2c3e50;
+            /* Màu Header MỚI: Gradient nổi bật */
+            --header-start: #6a11cb; 
+            --header-end: #2575fc; 
+            
+            --sub-text-color: #7f8c8d;
+            --border-radius: 20px;
+            
+            /* Neumorphism shadows nhẹ nhàng */
+            --shadow-light: 4px 4px 10px rgba(180, 190, 200, 0.7);
+            --shadow-dark: -4px -4px 10px rgba(255, 255, 255, 0.9);
+            --design-color: #e0d0f5; /* Màu trang trí tím nhạt */
+        }
+
+        /* 1. Thiết lập chung */
+        body {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            /* Nền Gradient Thơ mộng */
+            background: linear-gradient(135deg, var(--bg-start) 0%, var(--bg-end) 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            line-height: 1.5;
+            padding-bottom: 30px;
+        }
+        
+        /* Hiệu ứng Kim tuyến/lấp lánh nền nhẹ */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(white 1px, transparent 0);
+            background-size: 8px 8px;
+            opacity: 0.2;
+            z-index: -1;
+        }
+
+
+        /* 2. Header (Thanh Banking Cải tiến) */
+        .header {
+            width: 100%;
+            /* Màu Gradient nổi bật */
+            background: linear-gradient(90deg, var(--header-start) 0%, var(--header-end) 100%);
+            color: white;
+            text-align: center;
+            padding: 25px 0;
+            font-size: 1.8em;
+            font-weight: 800; /* Dày hơn */
+            letter-spacing: 1.5px; /* Rộng hơn */
+            /* Thêm Shadow 3D nhẹ */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3), inset 0 -4px 5px rgba(255, 255, 255, 0.2);
+            margin-bottom: 30px;
+            position: sticky;
+            top: 0;
+            z-index: 50; /* Giữ header ở trên */
+        }
+
+        /* 3. Container chứa 3 Card */
+        .container {
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: center;
+            gap: 30px; 
+            align-items: stretch;
+        }
+
+        /* 4. Thẻ Card - Neumorphism nhẹ nhàng */
+        .bank-card {
+            background-color: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-light), 
+                        var(--shadow-dark); 
+            width: 100%; 
+            max-width: 380px; 
+            text-align: center;
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; 
+            align-items: center; 
+            position: relative; 
+            overflow: hidden; 
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .bank-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1), var(--shadow-light);
+        }
+
+        .bank-card > * {
+            position: relative; 
+            z-index: 10;
+        }
+        
+        /* HỌA TIẾT TRANG TRÍ (Sóng gợn nhẹ) */
+        .bank-card::after {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 150%;
+            height: 150%;
+            background: radial-gradient(circle at 10% 10%, var(--design-color) 0%, transparent 40%),
+                        radial-gradient(circle at 90% 90%, var(--design-color) 0%, transparent 40%);
+            opacity: 0.3;
+            transform: rotate(15deg);
+            z-index: 0;
+        }
+
+        /* Logo và Info */
+        .service-logo {
+            width: 80px; height: 80px; object-fit: contain; margin-bottom: 15px; border-radius: 0; 
+        }
+        .service-logo.mb-logo {
+            width: 100px; height: 50px; margin-top: 15px;
+        }
+
+        /* 5. Thông tin chi tiết */
+        .card-content-wrapper {
+            width: 100%; 
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly; 
+            min-height: 140px; 
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .info-group {
+            width: 100%; 
+            margin-bottom: 18px;
+            padding-top: 15px;
+            padding-bottom: 15px; 
+            border-bottom: 1px dashed #e5e5e5;
+        }
+        
+        .label {
+            display: block;
+            font-size: 0.9em; 
+            color: var(--sub-text-color);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: 600; /* Dày hơn */
+            text-align: left; /* Căn trái label */
+            padding-left: 5px;
+        }
+        
+        .value-container {
+            display: flex;
+            /* Căn LỀ GIỮA cho STK/SĐT (kết hợp nút copy) */
+            justify-content: center; 
+            align-items: center;
+            gap: 10px;
+            padding: 0 5px;
+        }
+
+        /* Căn chỉnh riêng cho Tên Chủ TK (không có nút copy) */
+        .info-group .value:not(.rgb-highlight) {
+            display: block;
+            text-align: left; /* Căn TRÁI Tên chủ TK */
+            padding-left: 5px;
+        }
+        
+        .value {
+            font-size: 1.4em;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+        
+        /* HIỆU ỨNG RGB MÀU NHÁY CHO TEXT STK */
+        .rgb-highlight {
+            font-size: 1.6em !important;
+            font-weight: 800;
+            animation: rgb-glow 2s infinite alternate;
+            transition: all 0.1s;
+        }
+
+        @keyframes rgb-glow {
+            0% {
+                color: #ff007f;
+                text-shadow: 0 0 5px #ff007f, 0 0 10px rgba(255, 0, 127, 0.5);
+            }
+            33% {
+                color: #00ffaa;
+                text-shadow: 0 0 5px #00ffaa, 0 0 10px rgba(0, 255, 170, 0.5);
+            }
+            66% {
+                color: #0099ff;
+                text-shadow: 0 0 5px #0099ff, 0 0 10px rgba(0, 153, 255, 0.5);
+            }
+            100% {
+                color: #ff007f;
+                text-shadow: 0 0 5px #ff007f, 0 0 10px rgba(255, 0, 127, 0.5);
+            }
+        }
+        
+        /* NÚT TƯƠNG TÁC (Copy/Save) - Neumorphism */
+        .action-btn {
+            background-color: var(--card-bg);
+            border: none;
+            border-radius: 10px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            box-shadow: 3px 3px 8px rgba(189, 196, 203, 0.6), 
+                        -3px -3px 8px rgba(255, 255, 255, 0.8);
+            font-size: 1.1em;
+            transition: all 0.15s ease;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--header-start); /* Màu nhấn mặc định là màu Header */
+        }
+        
+        /* Màu nhấn riêng cho từng Card */
+        .momo-card .action-btn { color: #AF0069; }
+        .momo-card h2 { color: #AF0069; }
+        .mb-card .action-btn { color: #007bff; }
+        .mb-card h2 { color: #007bff; }
+        .zalopay-card .action-btn { color: #008CFF; }
+        .zalopay-card h2 { color: #008CFF; }
+
+
+        /* 6. Mã QR Code và Action Group */
+        .qr-section {
+            width: 100%;
+            margin-top: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: auto;
+        }
+        
+        .qr-code img {
+            width: 80%; 
+            height: auto;
+            max-width: 280px; 
+            padding: 12px;
+            background-color: var(--card-bg); 
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        
+        .qr-actions .action-btn {
+            width: 50px;
+            height: 50px;
+            font-size: 1.4em;
+        }
+
+        /* 8. Thông báo (Notification) */
+        .notification {
+            position: fixed;
+            bottom: 20px; 
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            font-weight: 600;
+        }
+
+        .notification.show {
+            opacity: 1;
+        }
+
+        /* 9. Footer */
+        .footer {
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.8em;
+            color: var(--sub-text-color);
+            margin-top: 20px;
+        }
+        
+        /* Responsive cho màn hình lớn hơn */
+        @media (min-width: 768px) {
+            .container {
+                padding: 40px;
+            }
+            .bank-card {
+                max-width: 350px; 
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <i class="fas fa-hand-holding-dollar" style="margin-right: 10px;"></i> BANKING ONLINE
+    </div>
+
+    <div class="container">
+
+        <div class="bank-card momo-card">
+            <img class="service-logo" src="https://upload.wikimedia.org/wikipedia/vi/f/fe/MoMo_Logo.png" alt="Logo Momo">
+            <h2 style="margin-bottom: 20px;">MOMO <i class="fas fa-mobile-alt"></i></h2>
+            
+            <div class="card-content-wrapper">
+                <div class="info-group">
+                    <span class="label">Tên chủ tài khoản</span>
+                    <span class="value">LE ANH TUONG</span>
+                </div>
+                
+                <div class="info-group">
+                    <span class="label">Số điện thoại (Ví)</span>
+                    <div class="value-container">
+                        <span id="momoValue" class="value rgb-highlight">09334272293</span>
+                        <button class="action-btn" onclick="copyValue('momoValue', this, 'Số điện thoại')" title="Sao chép số điện thoại">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qr-section">
+                <div class="qr-code">
+                    <img id="momoQr" src="https://www.avasam.com/wp-content/uploads/2019/10/qr-sample.png" alt="Mã QR Momo">
+                </div>
+                <div class="qr-actions">
+                    <button class="action-btn" 
+                        data-download-url="https://drive.google.com/uc?export=download&id=[MOMO_QR_ID_TRUC_TIEP]"
+                        onclick="saveQrCode(this, 'QR_MOMO_LEANHTUONG.png')" 
+                        title="Lưu ảnh QR">
+                        <i class="fas fa-cloud-download-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bank-card mb-card">
+            <img class="service-logo mb-logo" src="https://upload.wikimedia.org/wikipedia/commons/2/25/Logo_MB_new.png" alt="Logo MB Bank">
+            <h2 style="margin-bottom: 20px;">MB BANK <i class="fas fa-university"></i></h2>
+
+            <div class="card-content-wrapper">
+                <div class="info-group">
+                    <span class="label">Tên chủ tài khoản</span>
+                    <span class="value">LE ANH TUONG</span>
+                </div>
+                
+                <div class="info-group">
+                    <span class="label">Số tài khoản</span>
+                    <div class="value-container">
+                        <span id="mbValue" class="value rgb-highlight">1900200030004</span>
+                        <button class="action-btn" onclick="copyValue('mbValue', this, 'Số tài khoản')" title="Sao chép số tài khoản">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qr-section">
+                <div class="qr-code">
+                    <img id="mbQr" src="https://www.avasam.com/wp-content/uploads/2019/10/qr-sample.png" alt="Mã QR MB Bank">
+                </div>
+                <div class="qr-actions">
+                    <button class="action-btn" 
+                        data-download-url="https://drive.google.com/uc?export=download&id=1frFuTGUG__znvgTkxfC-x-kemtofY3w4"
+                        onclick="saveQrCode(this, 'QR_MB_LEANHTUONG.png')" 
+                        title="Lưu ảnh QR">
+                        <i class="fas fa-cloud-download-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="bank-card zalopay-card">
+            <img class="service-logo" src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Logo ZaloPay">
+            <h2 style="margin-bottom: 20px;">ZALOPAY <i class="fas fa-comment-dots"></i></h2>
+            
+            <div class="card-content-wrapper">
+                <div class="info-group">
+                    <span class="label">Tên chủ tài khoản</span>
+                    <span class="value">LE ANH TUONG</span>
+                </div>
+                
+                <div class="info-group">
+                    <span class="label">Số điện thoại (Ví)</span>
+                    <div class="value-container">
+                        <span id="zaloValue" class="value rgb-highlight">09334272293</span>
+                        <button class="action-btn" onclick="copyValue('zaloValue', this, 'Số điện thoại')" title="Sao chép số điện thoại">
+                            <i class="fas fa-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qr-section">
+                <div class="qr-code">
+                    <img id="zaloQr" src="https://www.avasam.com/wp-content/uploads/2019/10/qr-sample.png" alt="Mã QR ZaloPay">
+                </div>
+                <div class="qr-actions">
+                    <button class="action-btn" 
+                        data-download-url="https://drive.google.com/uc?export=download&id=[ZALOPAY_QR_ID_TRUC_TIEP]"
+                        onclick="saveQrCode(this, 'QR_ZALOPAY_LEANHTUONG.png')" 
+                        title="Lưu ảnh QR">
+                        <i class="fas fa-cloud-download-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        © Lê Anh Tường 2006 | Three-in-One Payment Gateway
+    </div>
+    
+    <div id="notification-area" class="notification"></div>
+
+    <script>
+        const notificationArea = document.getElementById('notification-area');
+
+        // Hàm hiển thị thông báo
+        function showNotification(message) {
+            notificationArea.innerText = message;
+            notificationArea.classList.add('show');
+            
+            // Ẩn thông báo sau 2 giây
+            setTimeout(() => {
+                notificationArea.classList.remove('show');
+            }, 2000);
+        }
+
+        // Hàm sao chép giá trị
+        function copyValue(elementId, buttonElement, type) {
+            const valueElement = document.getElementById(elementId);
+            const valueToCopy = valueElement.innerText;
+            
+            navigator.clipboard.writeText(valueToCopy).then(() => {
+                const originalIcon = buttonElement.innerHTML;
+                buttonElement.innerHTML = '<i class="fas fa-check"></i>'; 
+                
+                showNotification(type + ' đã sao chép');
+
+                setTimeout(() => {
+                    buttonElement.innerHTML = originalIcon;
+                }, 1500);
+
+            }).catch(err => {
+                console.error('Could not copy text: ', err);
+                alert('Không thể sao chép tự động. Vui lòng sao chép thủ công: ' + valueToCopy);
+            });
+        }
+        
+        // Hàm lưu ảnh QR (Sử dụng data-download-url)
+        function saveQrCode(buttonElement, filename) {
+            const imageUrl = buttonElement.getAttribute('data-download-url');
+            
+            if (!imageUrl || imageUrl.startsWith('http') === false) {
+                showNotification('Lỗi: Đường dẫn tải ảnh QR không hợp lệ. Vui lòng kiểm tra lại ID.');
+                return;
+            }
+
+            // Tạo một thẻ <a> ẩn để kích hoạt tải xuống
+            const link = document.createElement('a');
+            link.href = imageUrl;
+            link.download = filename; 
+            
+            // Kích hoạt tải xuống mà không chuyển tab
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Phản hồi trực quan
+            const originalIcon = buttonElement.innerHTML;
+            buttonElement.innerHTML = '<i class="fas fa-check"></i>'; 
+            
+            showNotification('Đã tải ảnh QR');
+
+            // Trở lại trạng thái ban đầu sau 1.5 giây
+            setTimeout(() => {
+                buttonElement.innerHTML = originalIcon;
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>
