@@ -17,7 +17,7 @@
             "NO ROOT"
         ],
         "login_title": "HỆ THỐNG ĐĂNG NHẬP",
-        "login_placeholder": "KEY_XXXXXX-YYYYYY-ZZZZZZ-NNNN",
+        "login_placeholder": "KEY",
         "btn_login_text": "NHẬP KEY",
         "btn_get_key_text": "Nhận Key Miễn Phí",
         "get_key_url": "https://getkey.com/gamekey",
@@ -54,4 +54,5 @@
             }
         ]
     }
+
 }
