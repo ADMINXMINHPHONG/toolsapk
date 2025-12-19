@@ -1,58 +1,57 @@
 {
-    "x": "0000",
-    "min_version_code": 1,
-    "force_update": false,
-    "update_url": "https://t.me/your_channel",
-    "update_message": "Hệ thống đang bảo trì hoặc có bản cập nhật mới!",
-    "maintenance": false,
-    "ui": {
-        "app_name": "Game Tools Pro",
-        "app_subtitle": "Full Mod • Unlock Features",
-        "app_version": "V1.208",
-        "logo_url": "https://sf-static.upanhlaylink.com/img/image_20251218e571e6509c2c7bd6b7f3015d4c5510b5.jpg",
-        "event_message": "🎄 GIÁNG SINH VUI VẺ NHÉ! 🎄",
-        "header_tags": [
-            "ANDROID 8+",
-            "16+",
-            "NO ROOT"
-        ],
-        "login_title": "HỆ THỐNG ĐĂNG NHẬP",
-        "login_placeholder": "KEY",
-        "btn_login_text": "NHẬP KEY",
-        "btn_get_key_text": "Nhận Key Miễn Phí",
-        "get_key_url": "https://getkey.com/gamekey",
-        "tutorial": {
-            "thumbnail_url": "https://img.youtube.com/vi/Bfc05nERjrI/maxresdefault.jpg",
-            "title": "Hướng dẫn Full Setting V2 - Anti Lag 100%",
-            "badge": "HOT"
-        },
-        "social_title": "Cộng đồng & Hỗ trợ",
-        "socials": [
-            {
-                "name": "Telegram",
-                "icon": "telegram",
-                "url": "https://t.me/your_channel",
-                "color": "#0088CC"
-            },
-            {
-                "name": "YouTube",
-                "icon": "youtube",
-                "url": "https://youtube.com/@yourchannel",
-                "color": "#FF0000"
-            },
-            {
-                "name": "Discord",
-                "icon": "discord",
-                "url": "https://discord.gg/yourdiscord",
-                "color": "#5865F2"
-            },
-            {
-                "name": "Góp ý",
-                "icon": "feedback",
-                "url": "https://forms.gle/yourform",
-                "color": "#22C55E"
-            }
-        ]
-    }
-
+  "x": "0000",
+  "min_version_code": 1,
+  "force_update": false,
+  "update_url": "https://your-update-url.com",
+  "update_message": "Please update to the latest version",
+  "maintenance": false,
+  "ui": {
+    "app_name": "MOD SKIN PRO",
+    "app_subtitle": "PREMIUM EDITION",
+    "app_version": "V2.0",
+    "logo_url": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/logo.png",
+    "event_message": "🎄 MERRY CHRISTMAS! 50% OFF ALL MODS! 🎁",
+    "header_tags": [
+      "PREMIUM",
+      "VERIFIED",
+      "SECURE"
+    ],
+    "login_title": "AUTHENTICATION SYSTEM",
+    "btn_login_text": "ENTER KEY",
+    "btn_get_key_text": "GET FREE KEY",
+    "get_key_url": "https://your-key-website.com",
+    "tutorial": {
+      "thumbnail_url": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/tutorial-thumb.jpg",
+      "video_url": "https://youtube.com/watch?v=YOUR_VIDEO_ID",
+      "title": "HOW TO INSTALL MODS",
+      "badge": "NEW"
+    },
+    "social_title": "COMMUNITY & SUPPORT",
+    "socials": [
+      {
+        "name": "Telegram",
+        "icon_url": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/icons/telegram.png",
+        "url": "https://t.me/yourchannel",
+        "color": "#0088cc"
+      },
+      {
+        "name": "YouTube",
+        "icon_url": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/icons/youtube.png",
+        "url": "https://youtube.com/@yourchannel",
+        "color": "#FF0000"
+      },
+      {
+        "name": "Discord",
+        "icon_url": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/icons/discord.png",
+        "url": "https://discord.gg/yourserver",
+        "color": "#5865F2"
+      },
+      {
+        "name": "Feedback",
+        "icon_url": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/icons/feedback.png",
+        "url": "https://forms.gle/yourform",
+        "color": "#FFD700"
+      }
+    ]
+  }
 }
