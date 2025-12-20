@@ -1,0 +1,124 @@
+{
+    "categories": [
+        {
+            "id": "characters",
+            "name": "NHÂN VẬT (MAX)",
+            "description": "Alok Max, Kelly Max...",
+            "image": "https://i.pinimg.com/736x/62/72/cc/6272cc46ca6c2a4f549ebbf86d32f0eb.jpg",
+            "sub_categories": [
+                {
+                    "id": "alok",
+                    "name": "Alok Thức Tỉnh",
+                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/102000043.png",
+                    "mod_items": [
+                        {
+                            "id": "alok_vip1_max",
+                            "name": "Alok Thức Tỉnh Vip 1",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "FULL EFFECT",
+                            "download_url": "https://example.com/alok_vip1_max.7z"
+                        },
+                        {
+                            "id": "alok_vip2_max",
+                            "name": "Alok Thức Tỉnh Skin Max",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "SKIN ONLY",
+                            "download_url": "https://example.com/alok_vip2_max.7z"
+                        }
+                    ]
+                },
+                {
+                    "id": "kairos",
+                    "name": "Kairos",
+                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/102000046.png",
+                    "mod_items": [
+                        {
+                            "id": "kairos_vip1_max",
+                            "name": "Kairos Full Effect Max",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "FULL EFFECT",
+                            "download_url": "https://example.com/kairos_vip1_max.7z"
+                        },
+                        {
+                            "id": "kairos_vip2_max",
+                            "name": "Kairos Skin Vip Max",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "SKIN ONLY",
+                            "download_url": "https://example.com/kairos_vip2_max.7z"
+                        }
+                    ]
+                },
+                {
+                    "id": "maro",
+                    "name": "Maro",
+                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/102000028.png",
+                    "mod_items": [
+                        {
+                            "id": "maro_vip1_max",
+                            "name": "Maro Eagle Eye Max",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "FULL EFFECT",
+                            "download_url": "https://example.com/maro_vip1_max.7z"
+                        },
+                        {
+                            "id": "maro_vip2_max",
+                            "name": "Maro Desert Skin Max",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "SKIN ONLY",
+                            "download_url": "https://example.com/maro_vip2_max.7z"
+                        }
+                    ]
+                },
+                {
+                    "id": "wolfrahh",
+                    "name": "Wolfrahh",
+                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/102000019.png",
+                    "mod_items": [
+                        {
+                            "id": "wolfrahh_vip1_max",
+                            "name": "Wolfrahh Streamer Max",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "FULL EFFECT",
+                            "download_url": "https://example.com/wolfrahh_vip1_max.7z"
+                        },
+                        {
+                            "id": "wolfrahh_vip2_max",
+                            "name": "Wolfrahh Golden Max",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "SKIN ONLY",
+                            "download_url": "https://example.com/wolfrahh_vip2_max.7z"
+                        }
+                    ]
+                },
+                {
+                    "id": "kapella",
+                    "name": "Kapella",
+                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/101000018.png",
+                    "mod_items": [
+                        {
+                            "id": "kapella_vip1_max",
+                            "name": "Kapella K-Pop Max",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "FULL EFFECT",
+                            "download_url": "https://example.com/kapella_vip1_max.7z"
+                        },
+                        {
+                            "id": "kapella_vip2_max",
+                            "name": "Kapella Singer Max",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "SKIN ONLY",
+                            "download_url": "https://example.com/kapella_vip2_max.7z"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "guns",
+            "name": "VŨ KHÍ (MAX)",
+            "description": "Update Soon...",
+            "image": "https://i.pinimg.com/736x/ce/5f/a0/ce5fa0a6d07dc75d1cc6281945450294.jpg",
+            "sub_categories": []
+        }
+    ]
+}

@@ -1,26 +1,222 @@
 {
-  "min_version_code": 1,
-  "force_update": false,
-  "update_url": "https://www.facebook.com",
-  "update_message": "Vui lòng cập nhật bản mod mới nhất để có trải nghiệm tốt hơn!",
-  "mods": [
-    {
-      "id": "skin_ori_v1",
-      "name": "Skin Bundle V1",
-      "category": "Skin",
-      "download_url": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/skin_ori_v1.zip",
-      "file_size": 1595734,
-      "version": "1.0.0",
-      "game": "freefireth"
-    },
-    {
-      "id": "skin_max_v1",
-      "name": "Skin Bundle V1 Max",
-      "category": "Skin",
-      "download_url": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/skin_max_v1.zip",
-      "file_size": 1675561,
-      "version": "1.0.0",
-      "game": "freefiremax"
+    "min_version_code": 1,
+    "force_update": false,
+    "update_url": "https://t.me/YOUR_CHANNEL",
+    "update_message": "Vui lòng cập nhật bản mod mới nhất!",
+    "categories": [
+        {
+            "id": "characters",
+            "name": "NHÂN VẬT",
+            "description": "Alok, Kelly, Chrono...",
+            "image": "https://img.youtube.com/vi/S7xT4K5V3wA/hqdefault.jpg",
+            "sub_categories": [
+                {
+                    "id": "alok",
+                    "name": "Alok",
+                    "icon": "https://img.icons8.com/color/96/dj.png"
+                },
+                {
+                    "id": "kelly",
+                    "name": "Kelly",
+                    "icon": "https://img.icons8.com/color/96/running.png"
+                },
+                {
+                    "id": "chrono",
+                    "name": "Chrono",
+                    "icon": "https://img.icons8.com/color/96/shield.png"
+                },
+                {
+                    "id": "k",
+                    "name": "Nhân vật K",
+                    "icon": "https://img.icons8.com/color/96/doctor-male.png"
+                }
+            ]
+        },
+        {
+            "id": "guns",
+            "name": "VŨ KHÍ",
+            "description": "AR, SMG, SR, Pistol...",
+            "image": "https://photo.znews.vn/w660/Uploaded/neg_rtlzofn/2015_12_16/humannatureconnectionsurrealphotographyannijaveldre.jpg",
+            "sub_categories": [
+                {
+                    "id": "ar",
+                    "name": "Súng Trường",
+                    "icon": "🎯"
+                },
+                {
+                    "id": "smg",
+                    "name": "Tiểu Liên",
+                    "icon": "⚡"
+                },
+                {
+                    "id": "sr",
+                    "name": "Bắn Tỉa",
+                    "icon": "🎯"
+                },
+                {
+                    "id": "sg",
+                    "name": "Shotgun",
+                    "icon": "💥"
+                },
+                {
+                    "id": "pistol",
+                    "name": "Súng Ngắn",
+                    "icon": "🔫"
+                },
+                {
+                    "id": "melee",
+                    "name": "Cận Chiến",
+                    "icon": "🗡️"
+                }
+            ]
+        },
+        {
+            "id": "outfits",
+            "name": "TRANG PHỤC",
+            "description": "Áo quần, Mũ, Balo...",
+            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+            "sub_categories": [
+                {
+                    "id": "clothes",
+                    "name": "Quần Áo",
+                    "icon": "https://img.icons8.com/color/96/t-shirt.png"
+                },
+                {
+                    "id": "hats",
+                    "name": "Mũ",
+                    "icon": "https://img.icons8.com/color/96/baseball-cap.png"
+                },
+                {
+                    "id": "masks",
+                    "name": "Mặt Nạ",
+                    "icon": "https://img.icons8.com/color/96/theater-mask.png"
+                },
+                {
+                    "id": "backpacks",
+                    "name": "Ba Lô",
+                    "icon": "https://img.icons8.com/color/96/backpack.png"
+                },
+                {
+                    "id": "parachute",
+                    "name": "Dù",
+                    "icon": "https://img.icons8.com/color/96/umbrella.png"
+                },
+                {
+                    "id": "surfboard",
+                    "name": "Ván Lướt",
+                    "icon": "https://img.icons8.com/color/96/surf.png"
+                }
+            ]
+        },
+        {
+            "id": "emotes",
+            "name": "EMOTES",
+            "description": "Hành động, Nhảy...",
+            "image": "https://i.ytimg.com/vi/1QDJSxBFZk4/hqdefault.jpg",
+            "sub_categories": [
+                {
+                    "id": "action",
+                    "name": "Hành Động",
+                    "icon": "https://img.icons8.com/color/96/exercise.png"
+                },
+                {
+                    "id": "dance",
+                    "name": "Điệu Nhảy",
+                    "icon": "https://img.icons8.com/color/96/dance-with-devil.png"
+                }
+            ]
+        }
+    ],
+    "mods": {
+        "alok": [
+            {
+                "id": "alok_vip1",
+                "name": "Alok Quý Tộc",
+                "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                "type": "FULL EFFECT",
+                "download_url": ""
+            },
+            {
+                "id": "alok_vip2",
+                "name": "Alok Hắc Ám",
+                "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                "type": "SKIN ONLY",
+                "download_url": ""
+            }
+        ],
+        "clothes": [
+            {
+                "id": "hiphop",
+                "name": "Set HipHop VIP",
+                "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                "type": "FULL SET",
+                "download_url": ""
+            },
+            {
+                "id": "sakura",
+                "name": "Set Sakura Huyền Thoại",
+                "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                "type": "RARE",
+                "download_url": ""
+            },
+            {
+                "id": "criminal",
+                "name": "Quỷ Dạ Xoa",
+                "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                "type": "RED",
+                "download_url": ""
+            }
+        ],
+        "hats": [
+            {
+                "id": "hat_1",
+                "name": "Mũ Rơm Luffy",
+                "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                "type": "HOT",
+                "download_url": ""
+            }
+        ],
+        "action": [
+            {
+                "id": "pushup",
+                "name": "Hít Đất",
+                "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                "type": "EPIC",
+                "download_url": ""
+            },
+            {
+                "id": "laugh",
+                "name": "Cười Nhạo",
+                "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                "type": "RARE",
+                "download_url": ""
+            },
+            {
+                "id": "flag",
+                "name": "Cắm Cờ",
+                "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                "type": "NEW",
+                "download_url": ""
+            }
+        ],
+        "dance": [
+            {
+                "id": "dance_1",
+                "name": "Nhảy Gà",
+                "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                "type": "FUNNY",
+                "download_url": ""
+            }
+        ],
+        "ar": [
+            {
+                "id": "ak_dragon",
+                "name": "AK47 Rồng Xanh",
+                "image": "",
+                "type": "LV.7",
+                "vip": true,
+                "download_url": ""
+            }
+        ]
     }
-  ]
 }

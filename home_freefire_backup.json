@@ -1,0 +1,138 @@
+{
+    "categories": [
+        {
+            "id": "characters",
+            "name": "NHÂN VẬT",
+            "description": "Alok, Kelly, Ignis...",
+            "image": "https://i.pinimg.com/736x/62/72/cc/6272cc46ca6c2a4f549ebbf86d32f0eb.jpg",
+            "sub_categories": [
+                {
+                    "id": "alok",
+                    "name": "Alok Thức Tỉnh",
+                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/102000043.png",
+                    "mod_items": [
+                        {
+                            "id": "alok_vip1",
+                            "name": "Alok Thức Tỉnh Vip 1",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "FULL EFFECT",
+                            "download_url": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/skin_ori_v1.zip"
+                        },
+                        {
+                            "id": "alok_vip2",
+                            "name": "Alok Thức Tỉnh Skin Only",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "SKIN ONLY",
+                            "download_url": "https://example.com/alok_vip2.7z"
+                        }
+                    ]
+                },
+                {
+                    "id": "kairos",
+                    "name": "Kairos",
+                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/102000046.png",
+                    "mod_items": [
+                        {
+                            "id": "kairos_vip1",
+                            "name": "Kairos Full Effect",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "FULL EFFECT",
+                            "download_url": "https://example.com/kairos_vip1.7z"
+                        },
+                        {
+                            "id": "kairos_vip2",
+                            "name": "Kairos Skin Vip",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "SKIN ONLY",
+                            "download_url": "https://example.com/kairos_vip2.7z"
+                        }
+                    ]
+                },
+                {
+                    "id": "maro",
+                    "name": "Maro",
+                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/102000028.png",
+                    "mod_items": [
+                        {
+                            "id": "maro_vip1",
+                            "name": "Maro Eagle Eye",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "FULL EFFECT",
+                            "download_url": "https://example.com/maro_vip1.7z"
+                        },
+                        {
+                            "id": "maro_vip2",
+                            "name": "Maro Desert Skin",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "SKIN ONLY",
+                            "download_url": "https://example.com/maro_vip2.7z"
+                        }
+                    ]
+                },
+                {
+                    "id": "wolfrahh",
+                    "name": "Wolfrahh",
+                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/102000019.png",
+                    "mod_items": [
+                        {
+                            "id": "wolfrahh_vip1",
+                            "name": "Wolfrahh Streamer",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "FULL EFFECT",
+                            "download_url": "https://example.com/wolfrahh_vip1.7z"
+                        },
+                        {
+                            "id": "wolfrahh_vip2",
+                            "name": "Wolfrahh Golden",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "SKIN ONLY",
+                            "download_url": "https://example.com/wolfrahh_vip2.7z"
+                        }
+                    ]
+                },
+                {
+                    "id": "kapella",
+                    "name": "Kapella",
+                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/101000018.png",
+                    "mod_items": [
+                        {
+                            "id": "kapella_vip1",
+                            "name": "Kapella K-Pop",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "FULL EFFECT",
+                            "download_url": "https://example.com/kapella_vip1.7z"
+                        },
+                        {
+                            "id": "kapella_vip2",
+                            "name": "Kapella Singer",
+                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
+                            "type": "SKIN ONLY",
+                            "download_url": "https://example.com/kapella_vip2.7z"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "guns",
+            "name": "VŨ KHÍ",
+            "description": "Update Soon...",
+            "image": "https://i.pinimg.com/736x/ce/5f/a0/ce5fa0a6d07dc75d1cc6281945450294.jpg",
+            "sub_categories": []
+        },
+        {
+            "id": "outfits",
+            "name": "TRANG PHỤC",
+            "description": "Update Soon...",
+            "image": "https://i.pinimg.com/736x/ce/5f/a0/ce5fa0a6d07dc75d1cc6281945450294.jpg",
+            "sub_categories": []
+        },
+        {
+            "id": "emotes",
+            "name": "EMOTES",
+            "description": "Update Soon...",
+            "image": "https://i.pinimg.com/736x/ce/5f/a0/ce5fa0a6d07dc75d1cc6281945450294.jpg",
+            "sub_categories": []
+        }
+    ]
+}
