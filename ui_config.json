@@ -1,5 +1,5 @@
 {
-    "version": 1,
+    "version": 2,
     "lastUpdated": "2025-12-21",
     "splash": {
         "logoUrl": "https://i.pinimg.com/736x/e0/ea/40/e0ea40ae12c5d49c32fcc18a0a5f0eba.jpg",
@@ -33,10 +33,37 @@
             "networkError": "Lỗi kết nối! Vui lòng thử lại."
         }
     },
+    "gameSelect": {
+        "headerTitle": "WELCOME!",
+        "subtitle": "Chọn game bạn muốn cài mod",
+        "games": [
+            {
+                "id": "freefireth",
+                "name": "Free Fire",
+                "packageName": "com.dts.freefireth",
+                "logoUrl": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/ff_logo.png",
+                "accentColor": "#FFD700",
+                "enabled": true
+            },
+            {
+                "id": "freefiremax",
+                "name": "Free Fire Max",
+                "packageName": "com.dts.freefiremax",
+                "logoUrl": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/ffmax_logo.png",
+                "accentColor": "#FF6A00",
+                "enabled": true
+            }
+        ],
+        "shizukuLabel": "Shizuku",
+        "footerMessages": {
+            "androidVersion": "Android: Phiên bản {VERSION}",
+            "permissionRequired": "Yêu cầu: Shizuku"
+        }
+    },
     "tutorial": {
         "title": "Hướng dẫn Full Setting V2 - Anti Lag 100%",
         "badge": "HOT",
-        "thumbnailUrl": "https://raw.githubusercontent.com/YOUR_USERNAME/game-config/main/assets/tutorial_thumb.jpg",
+        "thumbnailUrl": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/tutorial_thumb.jpg",
         "videoUrl": "https://youtube.com/watch?v=YOUR_VIDEO_ID"
     },
     "socials": [
@@ -79,5 +106,4 @@
         "updateUrl": "https://play.google.com/store/apps/details?id=com.hacmod.fftools",
         "message": "Đã có phiên bản mới! Vui lòng cập nhật để tiếp tục sử dụng."
     }
-
 }
