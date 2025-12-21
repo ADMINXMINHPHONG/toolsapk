@@ -1,124 +1,237 @@
 {
+    "version": 1,
+    "lastUpdated": "2025-12-21",
+    "gameId": "freefiremax",
+    "gameName": "Free Fire Max",
+    "packageName": "com.dts.freefiremax",
+    "header": {
+        "title": "FREE FIRE MAX MODS",
+        "subtitle": "Chọn mod bạn muốn cài đặt",
+        "logoUrl": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/ffmax_logo.png"
+    },
     "categories": [
         {
-            "id": "characters",
-            "name": "NHÂN VẬT (MAX)",
-            "description": "Alok Max, Kelly Max...",
-            "image": "https://i.pinimg.com/736x/62/72/cc/6272cc46ca6c2a4f549ebbf86d32f0eb.jpg",
-            "sub_categories": [
+            "id": "skin_gun",
+            "name": "SKIN SÚNG",
+            "description": "Các skin súng cực đẹp",
+            "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/cat_gun.png",
+            "subCategories": [
                 {
-                    "id": "alok",
-                    "name": "Alok Thức Tỉnh",
-                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/102000043.png",
-                    "mod_items": [
-                        {
-                            "id": "alok_vip1_max",
-                            "name": "Alok Thức Tỉnh Vip 1",
-                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
-                            "type": "FULL EFFECT",
-                            "download_url": "https://example.com/alok_vip1_max.7z"
-                        },
-                        {
-                            "id": "alok_vip2_max",
-                            "name": "Alok Thức Tỉnh Skin Max",
-                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
-                            "type": "SKIN ONLY",
-                            "download_url": "https://example.com/alok_vip2_max.7z"
-                        }
-                    ]
+                    "id": "ak47",
+                    "name": "AK47",
+                    "icon": "🔫"
                 },
                 {
-                    "id": "kairos",
-                    "name": "Kairos",
-                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/102000046.png",
-                    "mod_items": [
-                        {
-                            "id": "kairos_vip1_max",
-                            "name": "Kairos Full Effect Max",
-                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
-                            "type": "FULL EFFECT",
-                            "download_url": "https://example.com/kairos_vip1_max.7z"
-                        },
-                        {
-                            "id": "kairos_vip2_max",
-                            "name": "Kairos Skin Vip Max",
-                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
-                            "type": "SKIN ONLY",
-                            "download_url": "https://example.com/kairos_vip2_max.7z"
-                        }
-                    ]
+                    "id": "m1014",
+                    "name": "M1014",
+                    "icon": "🎯"
                 },
                 {
-                    "id": "maro",
-                    "name": "Maro",
-                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/102000028.png",
-                    "mod_items": [
-                        {
-                            "id": "maro_vip1_max",
-                            "name": "Maro Eagle Eye Max",
-                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
-                            "type": "FULL EFFECT",
-                            "download_url": "https://example.com/maro_vip1_max.7z"
-                        },
-                        {
-                            "id": "maro_vip2_max",
-                            "name": "Maro Desert Skin Max",
-                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
-                            "type": "SKIN ONLY",
-                            "download_url": "https://example.com/maro_vip2_max.7z"
-                        }
-                    ]
+                    "id": "mp40",
+                    "name": "MP40",
+                    "icon": "💥"
                 },
                 {
-                    "id": "wolfrahh",
-                    "name": "Wolfrahh",
-                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/102000019.png",
-                    "mod_items": [
-                        {
-                            "id": "wolfrahh_vip1_max",
-                            "name": "Wolfrahh Streamer Max",
-                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
-                            "type": "FULL EFFECT",
-                            "download_url": "https://example.com/wolfrahh_vip1_max.7z"
-                        },
-                        {
-                            "id": "wolfrahh_vip2_max",
-                            "name": "Wolfrahh Golden Max",
-                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
-                            "type": "SKIN ONLY",
-                            "download_url": "https://example.com/wolfrahh_vip2_max.7z"
-                        }
-                    ]
-                },
-                {
-                    "id": "kapella",
-                    "name": "Kapella",
-                    "icon": "https://cdn.jsdelivr.net/gh/ShahGCreator/icon@main/PNG/101000018.png",
-                    "mod_items": [
-                        {
-                            "id": "kapella_vip1_max",
-                            "name": "Kapella K-Pop Max",
-                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
-                            "type": "FULL EFFECT",
-                            "download_url": "https://example.com/kapella_vip1_max.7z"
-                        },
-                        {
-                            "id": "kapella_vip2_max",
-                            "name": "Kapella Singer Max",
-                            "image": "https://banobagi.vn/wp-content/uploads/2025/04/anh-ff-14.jpg",
-                            "type": "SKIN ONLY",
-                            "download_url": "https://example.com/kapella_vip2_max.7z"
-                        }
-                    ]
+                    "id": "awm",
+                    "name": "AWM",
+                    "icon": "🎯"
                 }
             ]
         },
         {
-            "id": "guns",
-            "name": "VŨ KHÍ (MAX)",
-            "description": "Update Soon...",
-            "image": "https://i.pinimg.com/736x/ce/5f/a0/ce5fa0a6d07dc75d1cc6281945450294.jpg",
-            "sub_categories": []
+            "id": "skin_char",
+            "name": "SKIN NHÂN VẬT",
+            "description": "Trang phục nhân vật thời thượng",
+            "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/cat_char.png",
+            "subCategories": [
+                {
+                    "id": "male_outfit",
+                    "name": "Nam",
+                    "icon": "👨"
+                },
+                {
+                    "id": "female_outfit",
+                    "name": "Nữ",
+                    "icon": "👩"
+                },
+                {
+                    "id": "bundle",
+                    "name": "Bộ sưu tập",
+                    "icon": "✨"
+                }
+            ]
+        },
+        {
+            "id": "vehicle",
+            "name": "XE CỘ",
+            "description": "Skin xe và phương tiện",
+            "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/cat_vehicle.png",
+            "subCategories": [
+                {
+                    "id": "car",
+                    "name": "Xe hơi",
+                    "icon": "🚗"
+                },
+                {
+                    "id": "bike",
+                    "name": "Xe máy",
+                    "icon": "🏍️"
+                }
+            ]
+        },
+        {
+            "id": "parachute",
+            "name": "DÙ",
+            "description": "Skin dù và hiệu ứng",
+            "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/cat_para.png",
+            "subCategories": [
+                {
+                    "id": "parachute_skin",
+                    "name": "Skin dù",
+                    "icon": "🪂"
+                }
+            ]
+        },
+        {
+            "id": "emote",
+            "name": "EMOTE",
+            "description": "Các hành động nhảy",
+            "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/cat_emote.png",
+            "subCategories": [
+                {
+                    "id": "dance",
+                    "name": "Nhảy",
+                    "icon": "💃"
+                },
+                {
+                    "id": "action",
+                    "name": "Hành động",
+                    "icon": "🎭"
+                }
+            ]
         }
-    ]
+    ],
+    "modItems": {
+        "ak47": [
+            {
+                "modId": 101,
+                "name": "AK47 Dragon MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/ak47_dragon.png",
+                "type": "legendary"
+            },
+            {
+                "modId": 102,
+                "name": "AK47 Titan MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/ak47_titan.png",
+                "type": "epic"
+            },
+            {
+                "modId": 103,
+                "name": "AK47 Ice Blue MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/ak47_ice.png",
+                "type": "rare"
+            }
+        ],
+        "m1014": [
+            {
+                "modId": 104,
+                "name": "M1014 Phantom MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/m1014_phantom.png",
+                "type": "legendary"
+            },
+            {
+                "modId": 105,
+                "name": "M1014 Gold MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/m1014_gold.png",
+                "type": "epic"
+            }
+        ],
+        "mp40": [
+            {
+                "modId": 106,
+                "name": "MP40 Crazy Bunny MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/mp40_bunny.png",
+                "type": "legendary"
+            }
+        ],
+        "awm": [
+            {
+                "modId": 107,
+                "name": "AWM Winter MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/awm_winter.png",
+                "type": "legendary"
+            }
+        ],
+        "male_outfit": [
+            {
+                "modId": 110,
+                "name": "Criminal Bundle MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/criminal.png",
+                "type": "legendary"
+            },
+            {
+                "modId": 111,
+                "name": "Hip Hop Bundle MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/hiphop.png",
+                "type": "epic"
+            }
+        ],
+        "female_outfit": [
+            {
+                "modId": 112,
+                "name": "Sakura Bundle MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/sakura.png",
+                "type": "legendary"
+            }
+        ],
+        "bundle": [
+            {
+                "modId": 113,
+                "name": "Full Bundle Pack MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/fullpack.png",
+                "type": "legendary"
+            }
+        ],
+        "car": [
+            {
+                "modId": 120,
+                "name": "Sports Car Gold MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/car_gold.png",
+                "type": "epic"
+            }
+        ],
+        "bike": [
+            {
+                "modId": 121,
+                "name": "Bike Neon MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/bike_neon.png",
+                "type": "rare"
+            }
+        ],
+        "parachute_skin": [
+            {
+                "modId": 130,
+                "name": "Dragon Parachute MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/para_dragon.png",
+                "type": "legendary"
+            }
+        ],
+        "dance": [
+            {
+                "modId": 140,
+                "name": "Pirate Dance MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/emote_pirate.png",
+                "type": "legendary"
+            }
+        ],
+        "action": [
+            {
+                "modId": 141,
+                "name": "Loot Dance MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/emote_loot.png",
+                "type": "epic"
+            }
+        ]
+    },
+    "_NOTE_": "downloadUrl được lưu trên Firebase collection 'mods' theo modId để bảo mật"
 }
