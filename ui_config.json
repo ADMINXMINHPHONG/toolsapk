@@ -1,0 +1,82 @@
+{
+    "version": 1,
+    "lastUpdated": "2025-12-21",
+    "splash": {
+        "logoUrl": "https://raw.githubusercontent.com/YOUR_USERNAME/game-config/main/assets/logo.png",
+        "title": "HAC. MOD SKIN FF",
+        "appVersion": "V2.0.1",
+        "backgroundColor": "#000000",
+        "eventMessage": "🔥 MIỄN PHÍ 100% - KHÔNG QUẢNG CÁO 🔥",
+        "showEventMessage": true,
+        "splashDurationMs": 1500
+    },
+    "login": {
+        "appName": "HAC. MOD SKIN FF",
+        "appSubtitle": "Full Mod • ORI & MAX • No Root",
+        "appEmoji": "🚀",
+        "headerTags": [
+            "ANDROID 8+",
+            "16+",
+            "NO ROOT"
+        ],
+        "loginTitle": "HỆ THỐNG ĐĂNG NHẬP",
+        "keyInputHint": "KEY_XXXXXX-YYYYYY-ZZZZZZ-NNNN",
+        "btnLoginText": "NHẬP KEY",
+        "btnGetKeyText": "NHẬN KEY MIỄN PHÍ",
+        "getKeyUrl": "https://modgame08.top/key.html?key=",
+        "statusMessages": {
+            "checking": "Hệ thống đang check key...",
+            "success": "✅ KEY HỢP LỆ! Đang vào app...",
+            "expired": "❌ Key đã hết hạn!",
+            "invalid": "❌ Key không tồn tại!",
+            "empty": "Vui lòng nhập Key!",
+            "networkError": "Lỗi kết nối! Vui lòng thử lại."
+        }
+    },
+    "tutorial": {
+        "title": "Hướng dẫn Full Setting V2 - Anti Lag 100%",
+        "badge": "HOT",
+        "thumbnailUrl": "https://raw.githubusercontent.com/YOUR_USERNAME/game-config/main/assets/tutorial_thumb.jpg",
+        "videoUrl": "https://youtube.com/watch?v=YOUR_VIDEO_ID"
+    },
+    "socials": [
+        {
+            "id": "telegram",
+            "label": "Telegram",
+            "emoji": "✈️",
+            "color": "#0088CC",
+            "url": "https://t.me/YOUR_CHANNEL"
+        },
+        {
+            "id": "youtube",
+            "label": "YouTube",
+            "emoji": "🎬",
+            "color": "#FF0000",
+            "url": "https://youtube.com/@YOUR_CHANNEL"
+        },
+        {
+            "id": "discord",
+            "label": "Discord",
+            "emoji": "💬",
+            "color": "#5865F2",
+            "url": "https://discord.gg/YOUR_SERVER"
+        },
+        {
+            "id": "feedback",
+            "label": "Góp ý",
+            "emoji": "💡",
+            "color": "#22C55E",
+            "url": "https://forms.gle/YOUR_FORM"
+        }
+    ],
+    "maintenance": {
+        "enabled": false,
+        "message": "🔧 Hệ thống đang bảo trì. Vui lòng quay lại sau!"
+    },
+    "forceUpdate": {
+        "enabled": false,
+        "minVersionCode": 1,
+        "updateUrl": "https://play.google.com/store/apps/details?id=com.hacmod.fftools",
+        "message": "Đã có phiên bản mới! Vui lòng cập nhật để tiếp tục sử dụng."
+    }
+}
