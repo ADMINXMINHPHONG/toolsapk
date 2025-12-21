@@ -2,7 +2,7 @@
     "version": 1,
     "lastUpdated": "2025-12-21",
     "splash": {
-        "logoUrl": "https://raw.githubusercontent.com/YOUR_USERNAME/game-config/main/assets/logo.png",
+        "logoUrl": "https://i.pinimg.com/736x/e0/ea/40/e0ea40ae12c5d49c32fcc18a0a5f0eba.jpg",
         "title": "HAC. MOD SKIN FF",
         "appVersion": "V2.0.1",
         "backgroundColor": "#000000",
@@ -79,4 +79,5 @@
         "updateUrl": "https://play.google.com/store/apps/details?id=com.hacmod.fftools",
         "message": "Đã có phiên bản mới! Vui lòng cập nhật để tiếp tục sử dụng."
     }
+
 }
