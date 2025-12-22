@@ -1,5 +1,5 @@
 {
-    "version": 1,
+    "version": 2,
     "lastUpdated": "2025-12-21",
     "gameId": "freefireth",
     "gameName": "Free Fire",
@@ -35,6 +35,16 @@
                     "id": "awm",
                     "name": "AWM",
                     "icon": "🎯"
+                },
+                {
+                    "id": "scar",
+                    "name": "SCAR",
+                    "icon": "🔥"
+                },
+                {
+                    "id": "m4a1",
+                    "name": "M4A1",
+                    "icon": "⚡"
                 }
             ]
         },
@@ -45,25 +55,30 @@
             "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/cat_char.png",
             "subCategories": [
                 {
-                    "id": "male_outfit",
-                    "name": "Nam",
+                    "id": "alok",
+                    "name": "Alok",
+                    "icon": "🎵"
+                },
+                {
+                    "id": "chrono",
+                    "name": "Chrono",
+                    "icon": "⏰"
+                },
+                {
+                    "id": "bundle_nam",
+                    "name": "Bundle Nam",
                     "icon": "👨"
                 },
                 {
-                    "id": "female_outfit",
-                    "name": "Nữ",
+                    "id": "bundle_nu",
+                    "name": "Bundle Nữ",
                     "icon": "👩"
-                },
-                {
-                    "id": "bundle",
-                    "name": "Bộ sưu tập",
-                    "icon": "✨"
                 }
             ]
         },
         {
             "id": "vehicle",
-            "name": "XẾ HOẶT",
+            "name": "XE CỘ",
             "description": "Skin xe và phương tiện",
             "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/cat_vehicle.png",
             "subCategories": [
@@ -86,7 +101,7 @@
             "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/cat_para.png",
             "subCategories": [
                 {
-                    "id": "parachute_skin",
+                    "id": "du_skin",
                     "name": "Skin dù",
                     "icon": "🪂"
                 }
@@ -114,19 +129,19 @@
     "modItems": {
         "ak47": [
             {
-                "modId": 1,
+                "modCode": "ff_ak47_dragon",
                 "name": "AK47 Dragon",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/ak47_dragon.png",
                 "type": "legendary"
             },
             {
-                "modId": 2,
+                "modCode": "ff_ak47_titan",
                 "name": "AK47 Titan",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/ak47_titan.png",
                 "type": "epic"
             },
             {
-                "modId": 3,
+                "modCode": "ff_ak47_ice",
                 "name": "AK47 Ice Blue",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/ak47_ice.png",
                 "type": "rare"
@@ -134,13 +149,13 @@
         ],
         "m1014": [
             {
-                "modId": 4,
+                "modCode": "ff_m1014_phantom",
                 "name": "M1014 Phantom",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/m1014_phantom.png",
                 "type": "legendary"
             },
             {
-                "modId": 5,
+                "modCode": "ff_m1014_gold",
                 "name": "M1014 Gold",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/m1014_gold.png",
                 "type": "epic"
@@ -148,7 +163,7 @@
         ],
         "mp40": [
             {
-                "modId": 6,
+                "modCode": "ff_mp40_bunny",
                 "name": "MP40 Crazy Bunny",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/mp40_bunny.png",
                 "type": "legendary"
@@ -156,45 +171,75 @@
         ],
         "awm": [
             {
-                "modId": 7,
+                "modCode": "ff_awm_winter",
                 "name": "AWM Winter",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/awm_winter.png",
                 "type": "legendary"
             }
         ],
-        "male_outfit": [
+        "scar": [
             {
-                "modId": 10,
+                "modCode": "ff_scar_titan",
+                "name": "SCAR Titan",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/scar_titan.png",
+                "type": "legendary"
+            }
+        ],
+        "m4a1": [
+            {
+                "modCode": "ff_m4a1_galaxy",
+                "name": "M4A1 Galaxy",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/m4a1_galaxy.png",
+                "type": "legendary"
+            }
+        ],
+        "alok": [
+            {
+                "modCode": "ff_alok_thienha",
+                "name": "Alok Thiên Hà",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/alok_thienha.png",
+                "type": "legendary"
+            },
+            {
+                "modCode": "ff_alok_valorant",
+                "name": "Alok Valorant",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/alok_valorant.png",
+                "type": "epic"
+            }
+        ],
+        "chrono": [
+            {
+                "modCode": "ff_chrono_cr7",
+                "name": "Chrono CR7",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/chrono_cr7.png",
+                "type": "legendary"
+            }
+        ],
+        "bundle_nam": [
+            {
+                "modCode": "ff_bundle_criminal",
                 "name": "Criminal Bundle",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/criminal.png",
                 "type": "legendary"
             },
             {
-                "modId": 11,
+                "modCode": "ff_bundle_hiphop",
                 "name": "Hip Hop Bundle",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/hiphop.png",
                 "type": "epic"
             }
         ],
-        "female_outfit": [
+        "bundle_nu": [
             {
-                "modId": 12,
+                "modCode": "ff_bundle_sakura",
                 "name": "Sakura Bundle",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/sakura.png",
                 "type": "legendary"
             }
         ],
-        "bundle": [
-            {
-                "modId": 13,
-                "name": "Full Bundle Pack",
-                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/fullpack.png",
-                "type": "legendary"
-            }
-        ],
         "car": [
             {
-                "modId": 20,
+                "modCode": "ff_car_gold",
                 "name": "Sports Car Gold",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/car_gold.png",
                 "type": "epic"
@@ -202,15 +247,15 @@
         ],
         "bike": [
             {
-                "modId": 21,
+                "modCode": "ff_bike_neon",
                 "name": "Bike Neon",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/bike_neon.png",
                 "type": "rare"
             }
         ],
-        "parachute_skin": [
+        "du_skin": [
             {
-                "modId": 30,
+                "modCode": "ff_du_dragon",
                 "name": "Dragon Parachute",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/para_dragon.png",
                 "type": "legendary"
@@ -218,7 +263,7 @@
         ],
         "dance": [
             {
-                "modId": 40,
+                "modCode": "ff_emote_pirate",
                 "name": "Pirate Dance",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/emote_pirate.png",
                 "type": "legendary"
@@ -226,12 +271,11 @@
         ],
         "action": [
             {
-                "modId": 41,
+                "modCode": "ff_emote_loot",
                 "name": "Loot Dance",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/emote_loot.png",
                 "type": "epic"
             }
         ]
-    },
-    "_NOTE_": "downloadUrl được lưu trên Firebase collection 'mods' theo modId để bảo mật"
+    }
 }
