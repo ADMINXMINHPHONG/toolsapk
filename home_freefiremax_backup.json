@@ -1,5 +1,5 @@
 {
-    "version": 1,
+    "version": 2,
     "lastUpdated": "2025-12-21",
     "gameId": "freefiremax",
     "gameName": "Free Fire Max",
@@ -35,6 +35,16 @@
                     "id": "awm",
                     "name": "AWM",
                     "icon": "🎯"
+                },
+                {
+                    "id": "scar",
+                    "name": "SCAR",
+                    "icon": "🔥"
+                },
+                {
+                    "id": "m4a1",
+                    "name": "M4A1",
+                    "icon": "⚡"
                 }
             ]
         },
@@ -45,19 +55,24 @@
             "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/cat_char.png",
             "subCategories": [
                 {
-                    "id": "male_outfit",
-                    "name": "Nam",
+                    "id": "alok",
+                    "name": "Alok",
+                    "icon": "🎵"
+                },
+                {
+                    "id": "chrono",
+                    "name": "Chrono",
+                    "icon": "⏰"
+                },
+                {
+                    "id": "bundle_nam",
+                    "name": "Bundle Nam",
                     "icon": "👨"
                 },
                 {
-                    "id": "female_outfit",
-                    "name": "Nữ",
+                    "id": "bundle_nu",
+                    "name": "Bundle Nữ",
                     "icon": "👩"
-                },
-                {
-                    "id": "bundle",
-                    "name": "Bộ sưu tập",
-                    "icon": "✨"
                 }
             ]
         },
@@ -86,7 +101,7 @@
             "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/cat_para.png",
             "subCategories": [
                 {
-                    "id": "parachute_skin",
+                    "id": "du_skin",
                     "name": "Skin dù",
                     "icon": "🪂"
                 }
@@ -114,41 +129,29 @@
     "modItems": {
         "ak47": [
             {
-                "modId": 101,
+                "modCode": "ffmax_ak47_dragon",
                 "name": "AK47 Dragon MAX",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/ak47_dragon.png",
                 "type": "legendary"
             },
             {
-                "modId": 102,
+                "modCode": "ffmax_ak47_titan",
                 "name": "AK47 Titan MAX",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/ak47_titan.png",
                 "type": "epic"
-            },
-            {
-                "modId": 103,
-                "name": "AK47 Ice Blue MAX",
-                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/ak47_ice.png",
-                "type": "rare"
             }
         ],
         "m1014": [
             {
-                "modId": 104,
+                "modCode": "ffmax_m1014_phantom",
                 "name": "M1014 Phantom MAX",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/m1014_phantom.png",
                 "type": "legendary"
-            },
-            {
-                "modId": 105,
-                "name": "M1014 Gold MAX",
-                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/m1014_gold.png",
-                "type": "epic"
             }
         ],
         "mp40": [
             {
-                "modId": 106,
+                "modCode": "ffmax_mp40_bunny",
                 "name": "MP40 Crazy Bunny MAX",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/mp40_bunny.png",
                 "type": "legendary"
@@ -156,45 +159,69 @@
         ],
         "awm": [
             {
-                "modId": 107,
+                "modCode": "ffmax_awm_winter",
                 "name": "AWM Winter MAX",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/awm_winter.png",
                 "type": "legendary"
             }
         ],
-        "male_outfit": [
+        "scar": [
             {
-                "modId": 110,
-                "name": "Criminal Bundle MAX",
-                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/criminal.png",
+                "modCode": "ffmax_scar_titan",
+                "name": "SCAR Titan MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/scar_titan.png",
+                "type": "legendary"
+            }
+        ],
+        "m4a1": [
+            {
+                "modCode": "ffmax_m4a1_galaxy",
+                "name": "M4A1 Galaxy MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/m4a1_galaxy.png",
+                "type": "legendary"
+            }
+        ],
+        "alok": [
+            {
+                "modCode": "ffmax_alok_thienha",
+                "name": "Alok Thiên Hà MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/alok_thienha.png",
                 "type": "legendary"
             },
             {
-                "modId": 111,
-                "name": "Hip Hop Bundle MAX",
-                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/hiphop.png",
+                "modCode": "ffmax_alok_valorant",
+                "name": "Alok Valorant MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/alok_valorant.png",
                 "type": "epic"
             }
         ],
-        "female_outfit": [
+        "chrono": [
             {
-                "modId": 112,
+                "modCode": "ffmax_chrono_cr7",
+                "name": "Chrono CR7 MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/chrono_cr7.png",
+                "type": "legendary"
+            }
+        ],
+        "bundle_nam": [
+            {
+                "modCode": "ffmax_bundle_criminal",
+                "name": "Criminal Bundle MAX",
+                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/criminal.png",
+                "type": "legendary"
+            }
+        ],
+        "bundle_nu": [
+            {
+                "modCode": "ffmax_bundle_sakura",
                 "name": "Sakura Bundle MAX",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/sakura.png",
                 "type": "legendary"
             }
         ],
-        "bundle": [
-            {
-                "modId": 113,
-                "name": "Full Bundle Pack MAX",
-                "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/fullpack.png",
-                "type": "legendary"
-            }
-        ],
         "car": [
             {
-                "modId": 120,
+                "modCode": "ffmax_car_gold",
                 "name": "Sports Car Gold MAX",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/car_gold.png",
                 "type": "epic"
@@ -202,15 +229,15 @@
         ],
         "bike": [
             {
-                "modId": 121,
+                "modCode": "ffmax_bike_neon",
                 "name": "Bike Neon MAX",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/bike_neon.png",
                 "type": "rare"
             }
         ],
-        "parachute_skin": [
+        "du_skin": [
             {
-                "modId": 130,
+                "modCode": "ffmax_du_dragon",
                 "name": "Dragon Parachute MAX",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/para_dragon.png",
                 "type": "legendary"
@@ -218,7 +245,7 @@
         ],
         "dance": [
             {
-                "modId": 140,
+                "modCode": "ffmax_emote_pirate",
                 "name": "Pirate Dance MAX",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/emote_pirate.png",
                 "type": "legendary"
@@ -226,12 +253,11 @@
         ],
         "action": [
             {
-                "modId": 141,
+                "modCode": "ffmax_emote_loot",
                 "name": "Loot Dance MAX",
                 "image": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/mods/max/emote_loot.png",
                 "type": "epic"
             }
         ]
-    },
-    "_NOTE_": "downloadUrl được lưu trên Firebase collection 'mods' theo modId để bảo mật"
+    }
 }
