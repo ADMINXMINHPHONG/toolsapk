@@ -3,12 +3,12 @@
     "lastUpdated": "2025-12-21",
     "splash": {
         "logoUrl": "https://i.pinimg.com/736x/e0/ea/40/e0ea40ae12c5d49c32fcc18a0a5f0eba.jpg",
-        "title": "HAC. MOD SKIN FF",
+        "title": "HAC. MOD SKIN FF PRO ",
         "appVersion": "V2.0.1",
         "backgroundColor": "#000000",
         "eventMessage": "🔥 MIỄN PHÍ 100% - KHÔNG QUẢNG CÁO 🔥",
         "showEventMessage": true,
-        "splashDurationMs": 1500
+        "splashDurationMs": 1800
     },
     "login": {
         "appName": "HAC. MOD SKIN FF",
@@ -101,9 +101,10 @@
         "message": "🔧 Hệ thống đang bảo trì. Vui lòng quay lại sau!"
     },
     "forceUpdate": {
-        "enabled": false,
+        "enabled": true,
         "minVersionCode": 1,
         "updateUrl": "https://play.google.com/store/apps/details?id=com.hacmod.fftools",
         "message": "Đã có phiên bản mới! Vui lòng cập nhật để tiếp tục sử dụng."
     }
 }
+
