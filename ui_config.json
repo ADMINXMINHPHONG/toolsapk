@@ -61,7 +61,7 @@
         }
     },
     "tutorial": {
-        "title": "Hướng dẫn Full Setting V2 - Anti Lag 100%",
+        "title": "Hướng dẫn get key !",
         "badge": "HOT",
         "thumbnailUrl": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/tutorial_thumb.jpg",
         "videoUrl": "https://youtube.com/watch?v=YOUR_VIDEO_ID"
@@ -101,10 +101,11 @@
         "message": "🔧 Hệ thống đang bảo trì. Vui lòng quay lại sau!"
     },
     "forceUpdate": {
-        "enabled": true,
+        "enabled": false,
         "minVersionCode": 1,
         "updateUrl": "https://play.google.com/store/apps/details?id=com.hacmod.fftools",
         "message": "Đã có phiên bản mới! Vui lòng cập nhật để tiếp tục sử dụng."
     }
 }
+
 
