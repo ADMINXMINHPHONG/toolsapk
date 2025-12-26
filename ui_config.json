@@ -2,7 +2,7 @@
     "version": 2,
     "lastUpdated": "2025-12-21",
     "splash": {
-        "logoUrl": "https://raw.githubusercontent.com/ADMINXMINHPHONG/toolsapk/main/assets/logo.png",
+        "logoUrl": "https://i.pinimg.com/736x/75/d5/32/75d532c85bad24f834bef835f615441e.jpg",
         "title": "HAC. MOD SKIN FF",
         "appVersion": "V2.0.1",
         "backgroundColor": "#000000",
@@ -20,7 +20,7 @@
             "NO ROOT"
         ],
         "loginTitle": "HỆ THỐNG ĐĂNG NHẬP",
-        "keyInputHint": "KEY_XXXXXX-YYYYYY-ZZZZZZ-NNNN",
+        "keyInputHint": " KEY ",
         "btnLoginText": "NHẬP KEY",
         "btnGetKeyText": "NHẬN KEY MIỄN PHÍ",
         "getKeyUrl": "https://modgame08.top/key.html?key=",
@@ -108,3 +108,4 @@
         "message": "Đã có phiên bản mới! Vui lòng cập nhật để tiếp tục sử dụng ứng dụng."
     }
 }
+
