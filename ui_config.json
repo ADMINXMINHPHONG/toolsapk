@@ -3,15 +3,15 @@
     "lastUpdated": "2025-12-21",
     "splash": {
         "logoUrl": "https://i.pinimg.com/736x/75/d5/32/75d532c85bad24f834bef835f615441e.jpg",
-        "title": "HAC. MOD SKIN FF",
+        "title": "Lý Quang Vinh x Vương Màn Thầu  ",
         "appVersion": "V2.0.1",
         "backgroundColor": "#000000",
-        "eventMessage": "🔥 MIỄN PHÍ 100% - KHÔNG QUẢNG CÁO 🔥",
+        "eventMessage": "🔥 APP MOD SKIN OB51 - ANTIBAN 🔥",
         "showEventMessage": true,
         "splashDurationMs": 1500
     },
     "login": {
-        "appName": "HAC. MOD SKIN FF",
+        "appName": " MOD SKIN TOOLS",
         "appSubtitle": "Full Mod • ORI & MAX • No Root",
         "appEmoji": "🚀",
         "headerTags": [
@@ -20,7 +20,7 @@
             "NO ROOT"
         ],
         "loginTitle": "HỆ THỐNG ĐĂNG NHẬP",
-        "keyInputHint": " KEY ",
+        "keyInputHint": " KEY-XXXX_",
         "btnLoginText": "NHẬP KEY",
         "btnGetKeyText": "NHẬN KEY MIỄN PHÍ",
         "getKeyUrl": "https://modgame08.top/key.html?key=",
@@ -72,28 +72,28 @@
             "label": "Telegram",
             "emoji": "✈️",
             "color": "#0088CC",
-            "url": "https://t.me/YOUR_CHANNEL"
+            "url": "https://t.me/hactoolsgame"
         },
         {
             "id": "youtube",
             "label": "YouTube",
             "emoji": "🎬",
             "color": "#FF0000",
-            "url": "https://youtube.com/@YOUR_CHANNEL"
+            "url": "https://link4sub.com/2Dkz"
         },
         {
             "id": "discord",
             "label": "Discord",
             "emoji": "💬",
             "color": "#5865F2",
-            "url": "https://discord.gg/YOUR_SERVER"
+            "url": "https://discord.gg/GDCKgKvcuw"
         },
         {
             "id": "feedback",
             "label": "Góp ý",
             "emoji": "💡",
             "color": "#22C55E",
-            "url": "https://forms.gle/YOUR_FORM"
+            "url": "https://hactoolsgame.blogspot.com/2025/12/gop-y-bao-cao-su-co.html"
         }
     ],
     "maintenance": {
@@ -108,5 +108,6 @@
         "message": "Đã có phiên bản mới! Vui lòng cập nhật để tiếp tục sử dụng ứng dụng."
     }
 }
+
 
 
