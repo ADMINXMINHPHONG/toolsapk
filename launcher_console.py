@@ -1,327 +1,187 @@
 """
-HONGHAC LAUNCHER - Console Version (Khong can Kivy)
-Chay tren Termux khong can cai them gi
+HONGHAC - Simple Key Validator (No Kivy Required)
+Chay tren Pydroid3 / Termux
 """
-import os
-import sys
-import time
-import json
-import hashlib
-import platform
-import base64
-import zlib
+import os, sys, time, json, hashlib, platform, base64, zlib
+
+print("\n" + "=" * 50)
+print("   HONGHAC BUILDA - Key Validator")
+print("=" * 50)
 
 # ============================================================
 # CONFIG
 # ============================================================
-VALIDATION_ENDPOINT = "https://firestore.googleapis.com/v1/projects/honghac-builda-keys/databases/(default)/documents/keys"
-PUBLIC_API_KEY = "AIzaSyCsR_yDVQGgeqJAp5NvLWeLkPgz0scN-Xw"
+ENDPOINT = "https://firestore.googleapis.com/v1/projects/honghac-builda-keys/databases/(default)/documents/keys"
+API_KEY = "AIzaSyCsR_yDVQGgeqJAp5NvLWeLkPgz0scN-Xw"
 
-# Data directory
 def get_data_dir():
     if platform.system() == 'Linux' and os.path.exists('/sdcard'):
         return '/sdcard/HongHac'
-    else:
-        return os.path.join(os.path.expanduser('~'), '.honghac_data')
+    return os.path.join(os.path.expanduser('~'), '.honghac_data')
 
 DATA_DIR = get_data_dir()
 KEY_FILE = os.path.join(DATA_DIR, 'saved_key.json')
 
-# ============================================================
-# HELPER FUNCTIONS  
-# ============================================================
-def clear_screen():
-    os.system('clear' if os.name == 'posix' else 'cls')
+if not os.path.exists(DATA_DIR):
+    os.makedirs(DATA_DIR)
 
-def print_header():
-    print("\n" + "=" * 50)
-    print("       HONGHAC BUILDA - Console Launcher")
-    print("=" * 50)
-
-def get_device_fp():
+def get_fp():
     return hashlib.sha256(f"{platform.node()}-{platform.system()}".encode()).hexdigest()[:16]
 
-def save_key(key, device_id, expires):
+def fmt_time(exp):
+    if exp == 0: return "Vinh vien"
+    r = exp - int(time.time())
+    if r <= 0: return "DA HET HAN"
+    d, r = divmod(r, 86400)
+    h, r = divmod(r, 3600)
+    m, s = divmod(r, 60)
+    if d > 0: return f"{d}d {h}h {m}p"
+    if h > 0: return f"{h}h {m}p {s}s"
+    if m > 0: return f"{m}p {s}s"
+    return f"{s}s"
+
+def save_key(key, fp, exp):
     try:
-        if not os.path.exists(DATA_DIR):
-            os.makedirs(DATA_DIR)
-        data = {'key': key, 'device_id': device_id, 'expires': expires, 'saved_at': int(time.time())}
         with open(KEY_FILE, 'w') as f:
-            json.dump(data, f)
-    except:
-        pass
+            json.dump({'key': key, 'device_id': fp, 'expires': exp}, f)
+    except: pass
 
-def load_saved_key():
+def load_key():
     try:
         if os.path.exists(KEY_FILE):
-            with open(KEY_FILE, 'r') as f:
+            with open(KEY_FILE) as f:
                 return json.load(f)
-    except:
-        pass
+    except: pass
     return None
-
-def clear_key():
-    try:
-        if os.path.exists(KEY_FILE):
-            os.remove(KEY_FILE)
-    except:
-        pass
-
-def format_time(expires):
-    if expires == 0:
-        return "Vinh vien"
-    remaining = expires - int(time.time())
-    if remaining <= 0:
-        return "DA HET HAN!"
-    
-    days = remaining // 86400
-    hours = (remaining % 86400) // 3600
-    mins = (remaining % 3600) // 60
-    secs = remaining % 60
-    
-    if days > 0:
-        return f"{days}d {hours}h {mins}p"
-    elif hours > 0:
-        return f"{hours}h {mins}p {secs}s"
-    elif mins > 0:
-        return f"{mins}p {secs}s"
-    else:
-        return f"{secs}s"
 
 # ============================================================
 # VALIDATE KEY
 # ============================================================
-def validate_key(key):
+def validate(key):
     try:
         import requests
     except ImportError:
-        print("[!] Cai requests: pip install requests")
+        print("[X] Cai requests: pip install requests")
         return None
     
-    print(f"\n[*] Dang xac thuc key...")
+    print(f"\n[*] Xac thuc: {key[:15]}...")
     
     try:
-        url = f"{VALIDATION_ENDPOINT}/{key}"
-        r = requests.get(url, params={"key": PUBLIC_API_KEY}, timeout=15)
+        r = requests.get(f"{ENDPOINT}/{key}", params={"key": API_KEY}, timeout=15)
         
         if r.status_code == 404:
-            print("[X] Key khong hop le!")
+            print("[X] Key khong ton tai!")
             return None
-        
         if r.status_code != 200:
-            print(f"[X] Loi server: {r.status_code}")
+            print(f"[X] Loi: {r.status_code}")
             return None
         
         data = r.json()
-        fields = data.get('fields', {})
+        f = data.get('fields', {})
         
-        # Get key info
-        expires = int(fields.get('expires', {}).get('integerValue', 0))
-        device_id = fields.get('device_id', {}).get('stringValue', None)
-        first_used = int(fields.get('first_used', {}).get('integerValue', 0))
-        expires_seconds = int(fields.get('expires_seconds', {}).get('integerValue', 60))
-        max_uses = int(fields.get('max_uses', {}).get('integerValue', 1))
-        current_uses = int(fields.get('current_uses', {}).get('integerValue', 0))
+        exp = int(f.get('expires', {}).get('integerValue', 0))
+        dev = f.get('device_id', {}).get('stringValue', None)
+        first = int(f.get('first_used', {}).get('integerValue', 0))
+        exp_sec = int(f.get('expires_seconds', {}).get('integerValue', 60))
+        max_uses = int(f.get('max_uses', {}).get('integerValue', 1))
+        current = int(f.get('current_uses', {}).get('integerValue', 0))
         
-        # Credentials
-        api_cred = fields.get('api_credential', {}).get('stringValue', None)
-        enc_key = fields.get('encryption_key', {}).get('stringValue', None)
-        payload_url = fields.get('payload_url', {}).get('stringValue', None)
-        
-        if not api_cred or not enc_key or not payload_url:
+        # Check credentials
+        api_cred = f.get('api_credential', {}).get('stringValue', None)
+        if not api_cred:
             print("[X] Key chua duoc kich hoat!")
             return None
         
-        current_time = int(time.time())
-        device_fp = get_device_fp()
+        fp = get_fp()
+        ct = int(time.time())
         
         # Device check
-        if device_id and device_id != device_fp:
+        if dev and dev != fp:
             print("[X] Key da dung tren thiet bi khac!")
             return None
         
-        if not device_id and current_uses >= max_uses:
+        if not dev and current >= max_uses:
             print("[X] Key da het luot dung!")
             return None
         
         # Activate first time
-        if first_used == 0:
-            first_used = current_time
-            expires = current_time + expires_seconds
-            current_uses = 1
-            
-            # Update Firebase
-            update_url = f"{VALIDATION_ENDPOINT}/{key}"
-            update_data = {"fields": {
-                "first_used": {"integerValue": str(first_used)},
-                "expires": {"integerValue": str(expires)},
-                "device_id": {"stringValue": device_fp},
-                "current_uses": {"integerValue": str(current_uses)}
+        if first == 0:
+            exp = ct + exp_sec
+            update = {"fields": {
+                "first_used": {"integerValue": str(ct)},
+                "expires": {"integerValue": str(exp)},
+                "device_id": {"stringValue": fp},
+                "current_uses": {"integerValue": str(current + 1)}
             }}
-            full_url = f"{update_url}?key={PUBLIC_API_KEY}&updateMask.fieldPaths=first_used&updateMask.fieldPaths=expires&updateMask.fieldPaths=device_id&updateMask.fieldPaths=current_uses"
-            requests.patch(full_url, json=update_data)
+            url = f"{ENDPOINT}/{key}?key={API_KEY}"
+            url += "&updateMask.fieldPaths=first_used&updateMask.fieldPaths=expires"
+            url += "&updateMask.fieldPaths=device_id&updateMask.fieldPaths=current_uses"
+            requests.patch(url, json=update, timeout=10)
+            print("[OK] Key da duoc kich hoat!")
         
         # Check expired
-        if expires > 0 and current_time > expires:
+        if exp > 0 and ct > exp:
             print("[X] Key da het han!")
-            clear_key()
             return None
         
-        # Save key locally
-        save_key(key, device_fp, expires)
+        # Save locally
+        save_key(key, fp, exp)
         
-        print("[OK] Key hop le!")
-        print(f"    Thoi gian con lai: {format_time(expires)}")
-        
-        return {
-            'key': key,
-            'expires': expires,
-            'payload_url': payload_url,
-            'encryption_key': enc_key
-        }
+        return {'key': key, 'expires': exp}
         
     except Exception as e:
         print(f"[X] Loi: {e}")
         return None
-
-# ============================================================
-# DOWNLOAD & RUN APP
-# ============================================================
-def run_app(key_data):
-    try:
-        import requests
-    except ImportError:
-        print("[!] Cai requests: pip install requests")
-        return
-    
-    print("\n[*] Tai ung dung...")
-    
-    try:
-        # Get payload
-        r = requests.get(key_data['payload_url'], params={"key": PUBLIC_API_KEY}, timeout=30)
-        if r.status_code != 200:
-            print(f"[X] Tai loi: {r.status_code}")
-            return
-        
-        payload = r.json()
-        encrypted_b64 = payload.get('fields', {}).get('code', {}).get('stringValue', '')
-        
-        if not encrypted_b64:
-            print("[X] Payload loi!")
-            return
-        
-        print(f"[OK] Downloaded: {len(encrypted_b64)} chars")
-        
-        # Decrypt - REQUIRE cryptography
-        print("[*] Giai ma...")
-        try:
-            from cryptography.fernet import Fernet
-        except ImportError:
-            print("[X] Thiếu thư viện cryptography!")
-            print("[*] Cài đặt:")
-            print("    Termux: pkg install python-cryptography")
-            print("    PC:     pip install cryptography")
-            return
-        
-        try:
-            encrypted = base64.b64decode(encrypted_b64)
-            cipher = Fernet(key_data['encryption_key'].encode())
-            decrypted = cipher.decrypt(encrypted)
-            
-            try:
-                decrypted = zlib.decompress(decrypted)
-            except:
-                pass
-            
-            print(f"[OK] Decrypted: {len(decrypted)} bytes")
-            
-            # Run in memory
-            print("\n[*] Khoi dong ung dung...")
-            print("=" * 50)
-            
-            try:
-                import types
-                code_obj = compile(decrypted, '<memory>', 'exec')
-                module = types.ModuleType('__app__')
-                module.__file__ = '<memory>'
-                
-                exec(code_obj, module.__dict__)
-                
-                # Try to run Kivy app if available
-                try:
-                    from kivy.app import App as KivyApp
-                    for name, obj in module.__dict__.items():
-                        if isinstance(obj, type) and issubclass(obj, KivyApp) and obj is not KivyApp:
-                            print(f"[OK] Starting {name}...")
-                            obj().run()
-                            return
-                except ImportError:
-                    pass
-            except Exception as e:
-                # App code may require Kivy - show success anyway
-                if "kivy" in str(e).lower():
-                    print("[!] App yeu cau Kivy GUI (khong ho tro Termux)")
-                else:
-                    print(f"[!] Loi khi chay: {e}")
-            
-            # Console mode - show success
-            print("\n" + "=" * 50)
-            print("   KEY DA DUOC XAC THUC THANH CONG!")
-            print("=" * 50)
-            print(f"\nKey: {key_data['key']}")
-            print(f"Thoi gian con lai: {format_time(key_data['expires'])}")
-            print("\n[!] Luu y: App chinh can Kivy GUI")
-            print("    Termux khong ho tro Kivy")
-            print("    Key van hop le va da duoc kich hoat!")
-            print("\n[*] Nhan Enter de thoat...")
-            input()
-            
-        except Exception as e:
-            print(f"[X] Giai ma loi: {e}")
-        
-    except Exception as e:
-        print(f"[X] Loi: {e}")
 
 # ============================================================
 # MAIN
 # ============================================================
 def main():
-    clear_screen()
-    print_header()
-    
-    if not os.path.exists(DATA_DIR):
-        os.makedirs(DATA_DIR)
-    
     # Check saved key
-    saved = load_saved_key()
-    if saved:
-        key = saved.get('key', '')
-        device_fp = saved.get('device_id', '')
-        expires = saved.get('expires', 0)
-        
-        if key and device_fp == get_device_fp():
-            if expires == 0 or int(time.time()) <= expires:
-                print(f"\n[*] Tim thay key da luu: {key[:15]}...")
-                print(f"    Con lai: {format_time(expires)}")
-                
-                choice = input("\nDung key nay? (y/n): ").strip().lower()
-                if choice == 'y' or choice == '':
-                    result = validate_key(key)
-                    if result:
-                        run_app(result)
-                        return
+    saved = load_key()
+    key = None
     
-    # Manual input
-    print("\n[?] Nhap key cua ban:")
-    key = input("> ").strip()
+    if saved:
+        skey = saved.get('key', '')
+        sdev = saved.get('device_id', '')
+        sexp = saved.get('expires', 0)
+        
+        if skey and sdev == get_fp():
+            if sexp == 0 or int(time.time()) <= sexp:
+                print(f"\n[*] Key da luu: {skey[:15]}...")
+                print(f"    Con lai: {fmt_time(sexp)}")
+                key = skey
+    
+    # Input if no saved key
+    if not key:
+        print("\n[?] Nhap key:")
+        try:
+            key = input("> ").strip()
+        except EOFError:
+            # Pydroid3 Editor mode - hardcode test or exit
+            print("\n[!] Khong the nhap tu Editor")
+            print("    Chay tu Terminal hoac dung key da luu")
+            return
     
     if not key:
-        print("[X] Key khong duoc de trong!")
+        print("[X] Key trong!")
         return
     
-    result = validate_key(key)
+    # Validate
+    result = validate(key)
+    
     if result:
-        run_app(result)
+        print("\n" + "=" * 50)
+        print("   KEY HOP LE - DA XAC THUC!")
+        print("=" * 50)
+        print(f"\nKey: {result['key']}")
+        print(f"Con lai: {fmt_time(result['expires'])}")
+        print("\n[!] Luu y: App chinh can Kivy GUI")
+        print("    Pydroid3/Termux chi xac thuc key")
+        print("    Chay app day du tren PC hoac APK")
+        print("=" * 50)
+    else:
+        print("\n[X] Xac thuc that bai!")
 
 if __name__ == '__main__':
     main()
