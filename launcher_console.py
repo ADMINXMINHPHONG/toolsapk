@@ -1,11 +1,11 @@
 """
-HONGHAC - Simple Key Validator (No Kivy Required)
-Chay tren Pydroid3 / Termux
+HONGHAC LAUNCHER - Android (Pydroid3)
+Validate key -> Download app -> Run
 """
 import os, sys, time, json, hashlib, platform, base64, zlib
 
 print("\n" + "=" * 50)
-print("   HONGHAC BUILDA - Key Validator")
+print("   HONGHAC BUILDA - Launcher")
 print("=" * 50)
 
 # ============================================================
@@ -32,10 +32,8 @@ def fmt_time(exp):
     if exp == 0: return "Vinh vien"
     r = exp - int(time.time())
     if r <= 0: return "DA HET HAN"
-    d, r = divmod(r, 86400)
-    h, r = divmod(r, 3600)
     m, s = divmod(r, 60)
-    if d > 0: return f"{d}d {h}h {m}p"
+    h, m = divmod(m, 60)
     if h > 0: return f"{h}h {m}p {s}s"
     if m > 0: return f"{m}p {s}s"
     return f"{s}s"
@@ -58,11 +56,7 @@ def load_key():
 # VALIDATE KEY
 # ============================================================
 def validate(key):
-    try:
-        import requests
-    except ImportError:
-        print("[X] Cai requests: pip install requests")
-        return None
+    import requests
     
     print(f"\n[*] Xac thuc: {key[:15]}...")
     
@@ -83,12 +77,13 @@ def validate(key):
         dev = f.get('device_id', {}).get('stringValue', None)
         first = int(f.get('first_used', {}).get('integerValue', 0))
         exp_sec = int(f.get('expires_seconds', {}).get('integerValue', 60))
-        max_uses = int(f.get('max_uses', {}).get('integerValue', 1))
-        current = int(f.get('current_uses', {}).get('integerValue', 0))
         
-        # Check credentials
+        # Credentials for payload
         api_cred = f.get('api_credential', {}).get('stringValue', None)
-        if not api_cred:
+        enc_key = f.get('encryption_key', {}).get('stringValue', None)
+        payload_url = f.get('payload_url', {}).get('stringValue', None)
+        
+        if not api_cred or not enc_key or not payload_url:
             print("[X] Key chua duoc kich hoat!")
             return None
         
@@ -100,43 +95,117 @@ def validate(key):
             print("[X] Key da dung tren thiet bi khac!")
             return None
         
-        if not dev and current >= max_uses:
-            print("[X] Key da het luot dung!")
-            return None
-        
         # Activate first time
         if first == 0:
             exp = ct + exp_sec
             update = {"fields": {
                 "first_used": {"integerValue": str(ct)},
                 "expires": {"integerValue": str(exp)},
-                "device_id": {"stringValue": fp},
-                "current_uses": {"integerValue": str(current + 1)}
+                "device_id": {"stringValue": fp}
             }}
             url = f"{ENDPOINT}/{key}?key={API_KEY}"
-            url += "&updateMask.fieldPaths=first_used&updateMask.fieldPaths=expires"
-            url += "&updateMask.fieldPaths=device_id&updateMask.fieldPaths=current_uses"
+            url += "&updateMask.fieldPaths=first_used&updateMask.fieldPaths=expires&updateMask.fieldPaths=device_id"
             requests.patch(url, json=update, timeout=10)
-            print("[OK] Key da duoc kich hoat!")
         
         # Check expired
         if exp > 0 and ct > exp:
             print("[X] Key da het han!")
             return None
         
-        # Save locally
         save_key(key, fp, exp)
+        print(f"[OK] Key hop le! Con lai: {fmt_time(exp)}")
         
-        return {'key': key, 'expires': exp}
+        return {
+            'key': key, 
+            'expires': exp,
+            'api_credential': api_cred,
+            'encryption_key': enc_key,
+            'payload_url': payload_url
+        }
         
     except Exception as e:
         print(f"[X] Loi: {e}")
         return None
 
 # ============================================================
+# LOAD AND RUN APP
+# ============================================================
+def load_app(key_data):
+    import requests
+    from cryptography.fernet import Fernet
+    import types
+    
+    print("\n[*] Tai ung dung...")
+    
+    try:
+        # Download payload
+        r = requests.get(key_data['payload_url'], params={"key": API_KEY}, timeout=30)
+        if r.status_code != 200:
+            print(f"[X] Tai loi: {r.status_code}")
+            return False
+        
+        payload = r.json()
+        encrypted_b64 = payload.get('fields', {}).get('code', {}).get('stringValue', '')
+        
+        if not encrypted_b64:
+            print("[X] Payload rong!")
+            return False
+        
+        print(f"[OK] Downloaded: {len(encrypted_b64)} chars")
+        
+        # Decrypt
+        print("[*] Giai ma...")
+        encrypted = base64.b64decode(encrypted_b64)
+        cipher = Fernet(key_data['encryption_key'].encode())
+        decrypted = cipher.decrypt(encrypted)
+        
+        # Decompress
+        try:
+            decrypted = zlib.decompress(decrypted)
+        except:
+            pass
+        
+        print(f"[OK] Giai ma: {len(decrypted)} bytes")
+        
+        # Run app
+        print("\n[*] Khoi dong giao dien...")
+        print("=" * 50)
+        
+        code_obj = compile(decrypted, '<memory>', 'exec')
+        module = types.ModuleType('__app__')
+        module.__file__ = '<memory>'
+        
+        exec(code_obj, module.__dict__)
+        
+        # Find and run Kivy App
+        from kivy.app import App as KivyApp
+        for name, obj in module.__dict__.items():
+            if isinstance(obj, type) and issubclass(obj, KivyApp) and obj is not KivyApp:
+                print(f"[OK] Starting {name}...")
+                obj().run()
+                return True
+        
+        print("[X] Khong tim thay app!")
+        return False
+        
+    except ImportError as e:
+        print(f"\n[X] Thieu thu vien: {e}")
+        print("[!] Cai them: pip install kivy cryptography")
+        return False
+    except Exception as e:
+        print(f"\n[X] Loi: {e}")
+        return False
+
+# ============================================================
 # MAIN
 # ============================================================
 def main():
+    try:
+        import requests
+    except ImportError:
+        print("[X] Cai requests: pip install requests")
+        return
+    
     # Check saved key
     saved = load_key()
     key = None
@@ -158,9 +227,7 @@ def main():
         try:
             key = input("> ").strip()
         except EOFError:
-            # Pydroid3 Editor mode - hardcode test or exit
-            print("\n[!] Khong the nhap tu Editor")
-            print("    Chay tu Terminal hoac dung key da luu")
+            print("[!] Chay tu Terminal de nhap key")
             return
     
     if not key:
@@ -171,17 +238,17 @@ def main():
     result = validate(key)
     
     if result:
-        print("\n" + "=" * 50)
-        print("   KEY HOP LE - DA XAC THUC!")
-        print("=" * 50)
-        print(f"\nKey: {result['key']}")
-        print(f"Con lai: {fmt_time(result['expires'])}")
-        print("\n[!] Luu y: App chinh can Kivy GUI")
-        print("    Pydroid3/Termux chi xac thuc key")
-        print("    Chay app day du tren PC hoac APK")
-        print("=" * 50)
-    else:
-        print("\n[X] Xac thuc that bai!")
+        # Load and run app
+        success = load_app(result)
+        
+        if not success:
+            print("\n" + "=" * 50)
+            print("   KEY HOP LE - NHUNG APP LOI")
+            print("=" * 50)
+            print(f"\nKey: {result['key']}")
+            print(f"Con lai: {fmt_time(result['expires'])}")
+            print("\n[!] Pydroid3 co the khong ho tro Kivy GUI")
+            print("    Thu chay lai hoac build APK")
 
 if __name__ == '__main__':
     main()
